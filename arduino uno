@@ -1,0 +1,10 @@
+void setup() {
+    Serial.begin(9600); // Initialize Serial at 9600 baud rate
+}
+
+void loop() {
+    if (Serial.available()) {
+        String message = Serial.readStringUntil('\n'); // Read incoming message
+        Serial.println("Received: " + message); // Print received message
+    }
+}
